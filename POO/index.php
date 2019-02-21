@@ -17,6 +17,9 @@
 		echo '<p>'.$curso->asignarTitulo('POO en PHP').'</p>';
 		echo '<p>'.$curso->obtenerTitulo().'</p>';
 
+		echo '<p>Requerimientos</p>';
+		$curso->asignarRequerimiento(['PHP dsd cero', 'Ganas de aprender', 'Práctica']);
+		echo '<p>'.$curso->obtenerRequerimiento().'</p>';
 	?> 
 
 
