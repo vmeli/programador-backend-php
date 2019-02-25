@@ -11,6 +11,7 @@
 		require_once __DIR__.INC.'Curso.inc.php';
 
 		$curso = new Curso('POO', 'Sandor', '3 sesiones', 10, true);
+		$curso2 = new Curso('Js', 'Sandor', '1 sesiones', 13, true);
 
 		echo '<p>'.$curso->obtenerTitulo().'</p>';
 		echo '<p>'.$curso->obtenerProfesor().'</p>';
@@ -20,6 +21,11 @@
 		echo '<p>Requerimientos</p>';
 		$curso->asignarRequerimiento(['PHP dsd cero', 'Ganas de aprender', 'Práctica']);
 		echo '<p>'.$curso->obtenerRequerimiento().'</p>';
+
+		#para acceder variables de tipo estático, no necesitamos instanciarlo
+		echo '<p>'.Curso::$moneda.'</p>'; 
+		echo '<p>'.Curso::obtenerDenominacion().'</p>';
+
 	?> 
 
 

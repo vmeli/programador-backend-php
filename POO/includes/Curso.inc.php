@@ -20,6 +20,9 @@
 		private $disponible;
 		private $listado; // asignamos por medio de la interface
 
+		#Atributo estático
+		public static $moneda = 'USD';
+
 		#Creando nuestro constructor
 		public function __construct($titulo, $profesor, $duracion, $costo, $disponible) {
 			$this->titulo = $titulo;
@@ -27,6 +30,11 @@
 			$this->duracion = $duracion;
 			$this->costo = $costo;
 			$this->disponible = $disponible;
+		}
+
+		#DESTRUCTOR ---> las clases se queda en memoria hasta q cierres sesión, ayuda a libera memoria ya q los obj pueden tener herencia, polimorfismo entre otras cosas(aplicaciones grandes es recomendable crear un destructor,que va destruir los objetos q fueron instanciado)
+		public function __destruct() {
+			echo '<p>Destruyendo '.$this->titulo.'</p>';
 		}
 
 		#ENCAPSULACIÓN ---> GETTER - SETTER
@@ -58,6 +66,10 @@
 		}
 		public function asignarConocimiento($listado) {}
 		public function obtenerConocimiento() {}
-	}
 
+		// :: operador de resolución de ámbito, anteponiendo la palabra reservada self por estar la variable en la misma clase o es heredada 
+		static function obtenerDenominacion() {
+			return self::$moneda;
+		}
+	}
 ?>
