@@ -15,11 +15,14 @@
 		$estudiante = new Estudiante('Geek', 'Women', 'geek@gmail.com');
 		//print_r($estudiante);
 		echo '<p> '.$estudiante->bienvenida().' </p>';
+		echo '<p> '.$estudiante->validarCompra().' </p>';
+		echo '<p> '.$estudiante::MONEDA.' </p>';
 
 		#Instanciar un profesor
 		$profesor = new Profesor('Sandor', 'Medrano', 'sandor@gmail.com');		
 		//print_r($profesor);
 		echo '<p> '.$profesor->bienvenida().' </p>';
+		echo '<p> '.$estudiante::MONEDA.' </p>';
 		
 	?> 
 
